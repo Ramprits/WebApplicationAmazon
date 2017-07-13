@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApplicationAmazon.Database;
 
 namespace WebApplicationAmazon.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private DhanaifruitsmartContext _context;
+
+        public ValuesController(DhanaifruitsmartContext context)
+        {
+            _context = context;
+        }
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
