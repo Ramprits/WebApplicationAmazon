@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApplicationAmazon.Database;
+using WebApplicationAmazon.AzureDatabase;
 
 namespace WebApplicationAmazon
 {
@@ -26,7 +26,7 @@ namespace WebApplicationAmazon
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<DhanaifruitsmartContext>(options =>
+            services.AddDbContext<DhanaifruitsdbContext>(options =>
               options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc();
         }
